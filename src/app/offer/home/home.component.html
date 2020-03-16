@@ -1,0 +1,80 @@
+<p>home works!</p>
+
+<div class="container">
+    <mat-horizontal-stepper labelPosition="bottom ">
+
+        <mat-step label="General info">
+            <form [formGroup]="generalForm">
+                <mat-form-field>
+                    <mat-label>Klijent</mat-label>
+                    <input matInput placeholder="Naručitelj prijevoza" formControlName="client" required>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <mat-label>Vrsta prijevoza</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let ttype of ttypes" [value]="ttype.value">
+                            {{ttype.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br />
+                <mat-form-field>
+                    <mat-label>Vrijednost</mat-label>
+                    <input matInput placeholder="Procjenjena vrijednost materijala">
+                </mat-form-field>
+            </form>
+            <div>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+
+        <mat-step label="Additional Info">
+            <form [formGroup]="additionalForm">
+                <mat-form-field>
+                    <mat-label>Materijal</mat-label>
+                    <input matInput placeholder="Materijal prevoženog tereta" formControlName="material" required>
+                </mat-form-field>
+                <br />
+
+                <mat-form-field>
+                    <mat-label>Količina</mat-label>
+                    <input matInput>
+                    <mat-select>
+                        <mat-option *ngFor="let vtype of vtypes" [value]="vtype.value">
+                            {{vtype.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br />
+         
+          
+            </form>
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>
+            </div>
+        </mat-step>
+
+
+
+        <mat-step label="Location info">
+            You are done!!!
+            <div>
+                <button mat-raised-button matStepperPrevious>Back</button>                
+            </div>
+        </mat-step>
+
+        <mat-step label="Summary info">
+
+            <div>
+                <button mat-raised-button type="submit">Potvrdi</button>
+            </div>
+
+        </mat-step>
+
+    </mat-horizontal-stepper>
+</div>
+
+<router-outlet></router-outlet>
+
