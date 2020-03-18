@@ -47,6 +47,15 @@
                     </mat-select>
                 </mat-form-field>
                 <br />
+
+                
+                    <mat-checkbox id="checkbox"></mat-checkbox>
+                    <mat-label>Dodatno osiguranje</mat-label>        
+                    
+                    <br/>
+                    <br/>
+                
+                
          
           
             </form>
@@ -59,13 +68,25 @@
 
 
         <mat-step label="Location info">
-            You are done!!!
-            <div>
-                <button mat-raised-button matStepperPrevious>Back</button>                
+            
+            <div class="row">
+            <app-location></app-location>
+        </div>
+            <br/>
+            <br/>
+
+            <div class="row">
+                <button mat-raised-button matStepperPrevious>Back</button>
+                <button mat-raised-button matStepperNext>Next</button>                
             </div>
         </mat-step>
 
         <mat-step label="Summary info">
+
+            
+            
+
+
 
             <div>
                 <button mat-raised-button type="submit">Potvrdi</button>
